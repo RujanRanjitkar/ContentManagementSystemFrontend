@@ -1,0 +1,78 @@
+<div class="card">
+    <form (ngSubmit)="onSubmit()">
+        <fieldset>
+            <legend>Create CDN</legend>
+            <div class="form-container">
+                <div class="container">
+                    <p style="margin-bottom: 0px;">Upload File:</p>
+                    <input type="file" class="upload-button" onchange="console.log(event.target.files)" name="file" [(ngModel)]="requests.file">
+                        <span class="icon-upload"></span>
+                    </div>
+
+                    <div class="created">
+                        <p style="margin-bottom: 0px;">Cas Id:</p>
+                        <input type="text" class="created-text" placeholder="Id" name="cas_id" [(ngModel)]="requests.maker_details[i].cas_id"></div>
+                    </div>
+
+                    <div class="form-container">
+                        <div class="multi-select">
+                            <mat-form-field class="custom-width">
+                                <mat-label>Send Approval</mat-label>
+                                <!-- <mat-select [formControl]="checkers" multiple>
+                                    <mat-option *ngFor="let checker of checkerList" [value]="checker" name="assignee" [(ngModel)]="requests.assignee">{{checker}}</mat-option>
+                                </mat-select> -->
+                                <mat-select [(ngModel)]="requests.assignee" multiple>
+                                    <mat-option *ngFor="let checker of checkerList" [value]="checker">{{ checker }}</mat-option>
+                                  </mat-select>
+                            </mat-form-field>
+                        </div>
+
+                        <!-- <div class="multi-select">
+                            <mat-form-field class="custom-width">cas
+                                <mat-label>Select Action</mat-label>
+                                <mat-select [(ngModel)]="requests.maker_details[i].action">
+                                    <mat-option *ngFor="let action of actions" [value]="action.value">{{ action.viewValue }}</mat-option>
+                                  </mat-select>
+                            </mat-form-field>
+                        </div> -->
+
+                        <div class="created">
+                            <p style="margin-bottom: 0px;">Requester:</p>
+                            <input type="text" class="created-text" placeholder="Username" name="username" [(ngModel)]="requests.maker_details[i].username">
+                        </div>
+                    </div>
+
+                    <div class="form-container">
+                        <div class="created">
+                            <p style="margin-bottom: 0px;">File Description:</p>
+                            <textarea class="" placeholder="File Description" style="height: 100px; width: 300px;" name="file_description" [(ngModel)]="requests.file_description"></textarea>
+                        </div>
+
+                        <div class="created">
+                            <p style="margin-bottom: 0px;">Comment:</p>
+                            <textarea class="" placeholder="Comment" style="height: 100px; width: 300px;" name="comments" [(ngModel)]="requests.maker_details[i].comments"></textarea>
+                        </div>
+
+                    </div>
+
+                    <!-- <div class="form-container">
+
+                            <div class="multi-select">
+                                <mat-form-field class="custom-width">
+                                    <mat-label>Maker</mat-label>
+                                    <mat-select [(ngModel)]="requests.maker_details[i].maker">
+                                        <mat-option *ngFor="let maker of makers" [value]="maker.value">{{ maker.viewValue }}</mat-option>
+                                      </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div> -->
+
+                        <div class="buttons-container">
+                            <button type="submit" class="button-arounder">Submit</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+
+
+            
